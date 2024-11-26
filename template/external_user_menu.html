@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Main</title>
+</head>
+<body>
+<center>
+    <div class="wrapper">
+        <section class="body">
+            <h1 class="title">
+                Добро пожаловать, Вы зашли как покупатель магазина.
+            </h1>
+        </section>
+        <section class="header">
+            <div class="menu">
+                <nav class="menu__body">
+                    <ul class="menu__list">
+                        <a href={{url_for('bp_market.order_index')}} class="menu__link">Меню покупок</a>
+                        <p></p>
+                        <a href={{url_for('exit_func')}} class="menu__link">Выйти</a>
+                    </ul>
+                </nav>
+            </div>
+        </section>
+    </div>
+</center>
+</body>
+</html>

@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <title>Basket</title>
+</head>
+<body>
+{% import 'product_list_utils.html' as utils %}
+
+<div class="container">
+    <div class="row">
+        <div>
+            <h2>Список товаров</h2>
+            {% if items %}
+            {% for item in items %}
+            <!-- Использование функции render_item из utils для отображения информации о товаре с формой для добавления в корзину, но без отображения количества товара -->
+                {{ utils.render_item(item, show_form=True, show_amount = False) }}
+            {% endfor %}
+            {% else %}
+                <p>Нет доступных товаров</p>
+            {% endif %}
+        </div>
+
+        <div>
+            <h2 style="color:blue">Ваша корзина</h2>
+            <a style="color:green" href="{{url_for('bp_market.clear_basket')}}">Очистить корзину</a>
+            {% if basket %}
+            {% for key in basket %}
+                {{ utils.render_item(basket[key], show_form=False, show_amount = True)}}
+            {% endfor %}
+            {% else %}
+                <p>Ваша корзина пуста</p>
+            {% endif %}
+        </div>
+        <a href="{{ url_for('bp_market.save_order') }}">Оформить заказ</a>
+        <a href="{{ url_for('menu_choice') }}">Вернуться в меню</a>
+
+    </div>
+</div>
+</body>
+</html>

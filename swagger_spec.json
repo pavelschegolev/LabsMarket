@@ -1,0 +1,116 @@
+{
+  "info": {
+    "title": "My Flask API",
+    "description": "API documentation with Flasgger",
+    "version": "1.0.0"
+  },
+  "paths": {
+    "/market/": {
+      "get": {
+        "responses": {
+          "200": {
+            "description": "Displays the product list or updates the basket",
+            "content": {
+              "text/html": {}
+            }
+          }
+        },
+        "parameters": [
+          {
+            "name": "prod_id",
+            "in": "formData",
+            "type": "string",
+            "required": false,
+            "description": "ID of the product to add to the basket (POST request only)"
+          }
+        ]
+      },
+      "post": {
+        "responses": {
+          "200": {
+            "description": "Displays the product list or updates the basket",
+            "content": {
+              "text/html": {}
+            }
+          }
+        },
+        "parameters": [
+          {
+            "name": "prod_id",
+            "in": "formData",
+            "type": "string",
+            "required": false,
+            "description": "ID of the product to add to the basket (POST request only)"
+          }
+        ]
+      }
+    },
+    "/market/save_order": {
+      "get": {
+        "responses": {
+          "200": {
+            "description": "Saves the current basket as an order and clears it",
+            "content": {
+              "text/html": {}
+            }
+          }
+        }
+      },
+      "post": {
+        "responses": {
+          "200": {
+            "description": "Saves the current basket as an order and clears it",
+            "content": {
+              "text/html": {}
+            }
+          }
+        }
+      }
+    },
+    "/market/clear-basket": {
+      "get": {
+        "responses": {
+          "302": {
+            "description": "Clears the current basket and redirects to the product list",
+            "headers": {
+              "Location": {
+                "description": "Redirect URL",
+                "type": "string"
+              }
+            }
+          }
+        }
+      }
+    },
+    "/": {
+      "get": {
+        "responses": {
+          "200": {
+            "description": "Returns the main menu based on user group",
+            "content": {
+              "text/html": {}
+            }
+          }
+        }
+      }
+    },
+    "/exit": {
+      "get": {
+        "responses": {
+          "200": {
+            "description": "Clears the session and returns the exit page",
+            "content": {
+              "text/html": {}
+            }
+          }
+        }
+      }
+    }
+  },
+  "definitions": {},
+  "swagger": "2.0",
+  "host": "127.0.0.1:5001",
+  "schemes": [
+    "http"
+  ]
+}

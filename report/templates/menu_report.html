@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Меню отчётов</title>
+</head>
+<body>
+    <h2 align="center">Меню отчетов</h2>
+    <center>
+        {% for report in report_list %}
+        <form action='' method = 'POST'>
+            <label for="create_rep" class="named_list">{{report['rep_name']}}</label>
+            <input type="submit" name="create_rep" id="create_rep" value="Создать отчёт">
+            <input type="submit" name="view_rep" id="view_rep" value="Просмотреть отчёт">
+            <input type="hidden" name="rep_id" value="{{report['rep_id']}}">
+        </form>
+        {% endfor %}
+    </center>
+    <center>
+        <a href={{url_for('menu_choice')}}> Вернуться в главное меню</a>
+    </center>
+</body>
+</html>
+
+<!--Лэйбл нужен только для первой кнопки. Позволяет пристроить поясняющий тест перед кнопкой ввода-->
+<!--Айди - это параметр который связывает поле ввода с тэгом лэйбл.-->

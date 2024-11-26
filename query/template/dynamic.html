@@ -1,0 +1,28 @@
+ <!DOCTYPE html>
+<html lang='en'>
+<head>
+	<meta charset="UTF-8">
+	<title>Dynamic_page</title>
+</head>
+<body>
+<center>
+	<h2>{{prod_title}}</h2>
+	<p>
+		<table border="1">
+			<tr>
+				<td>Name</td>
+				<td>Measure</td>
+				<td>Price</td>
+			</tr>
+			{% for product in products %}
+	<tr>
+			<td>{{product['prod_name']}}</td>
+			<td>{{product['prod_measure']}}</td>
+			<td>{{product['prod_price']}}</td>
+			{% endfor %}
+	</tr>
+
+</table>
+	<a href="{{url_for('menu_choice')}}"> Возврат в главное меню</a>
+</body>
+</html> 

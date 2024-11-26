@@ -1,0 +1,4 @@
+{"admin": ["bp_query","bp_report"],
+  "cashier": ["bp_report"],
+   "external": ["bp_market"]
+}

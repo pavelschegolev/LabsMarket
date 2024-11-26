@@ -1,0 +1,1 @@
+select * from myshop.product_report where rep_year = '$in_year' and rep_month = '$in_month';
